@@ -1,2 +1,2 @@
 # dorg2
-![dorg](assts/player.png)
+![dorg](assets/player.png)
