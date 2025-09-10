@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Hungry Dorg</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #202020;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      width: 1280px;
+      height: 720px;
+      background: #000;
+      touch-action: none; /* prevent scrolling on mobile */
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="1280" height="720" oncontextmenu="event.preventDefault()"></canvas>
+
+  <script>
+    // Define Module before the runtime uses it
+    var Module = {
+      canvas: (function() { return document.getElementById('canvas'); })(),
+      clientside: true
+    };
+  </script>
+
+  <!-- Emscripten injects your build here -->
+  {{{ SCRIPT }}}
+
+</body>
+</html>
